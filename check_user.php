@@ -16,7 +16,7 @@ if ($totUSER>0){
 	$_SESSION['XUSUARIO']  = $rowUSER["usuario"];
 	$_SESSION['XNOMBRE']   = $rowUSER["nombre"];
 	$_SESSION['ADMIN']  = '0';
-	if ($_SESSION['XUSUARIO']=='nico'){
+	if ($_SESSION['XUSUARIO']=='admin'){
 		$_SESSION['ADMIN']  = '1';
 	} 
 
