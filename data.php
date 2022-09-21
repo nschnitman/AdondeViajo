@@ -12,7 +12,7 @@ $longnombre = "Adonde Viajo";
 $longdesc = " Descubri lo imposible!" ;
 
 //Contacto
-$telefono = "+54911-36912268";
+$telefono = "";
 $mail = "info@adondeviajo.com.ar";
 
 //Redes Sociales
@@ -25,10 +25,10 @@ $portsimple = "portfolio.php?ID=";
 
 
 //Conexcion Base de Datos
-$host = "179.43.123.27";
-$userconect = "riley"; //cayynG9XqbJRdBcX
-$clave = "Monday29/Lost"; //8TDPJY2CEYfZ4UuS
-$basedatos = "nico7_testeo";
+$host = "";
+$userconect = "";
+$clave = "";
+$basedatos = "";
 $conexion = mysql_connect($host, $userconect, $clave) or die("Problemas al conectar con el servidor");
 mysql_select_db($basedatos, $conexion) or die("Problemas en la seleccion de la base de datos");
 ?>
