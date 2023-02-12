@@ -1,4 +1,4 @@
-#AdondeViajo
+# AdondeViajo
 
 AdondeViajo is a web application that helps users plan their travels by providing them with information about popular tourist destinations in different countries.
 
