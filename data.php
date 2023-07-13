@@ -20,10 +20,10 @@ $portsimple = "portfolio.php?ID=";
 
 
 //Conexcion Base de Datos
-$host = "179.43.121.176";
-$userconect = "jjb_db"; //cayynG9XqbJRdBcX
-$clave = "Nicolas23"; //8TDPJY2CEYfZ4UuS
-$basedatos = "nico7_testeo";
+$host = "localhost";
+$userconect = "uvjbhvuftjmpg"; 
+$clave = "bbd_523@#u%B"; 
+$basedatos = "dbhp7iny03n5hx";
 $conexion = mysqli_connect($host, $userconect, $clave, $basedatos) or die("Problemas al conectar con el servidor");
 mysqli_select_db($conexion, $basedatos) or die("Problemas en la seleccion de la base de datos");
 ?>
