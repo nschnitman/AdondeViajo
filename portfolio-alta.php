@@ -1,7 +1,5 @@
 <?php
-
-	//Datos de la base de datos
-		//echo $conexion;
+	include('data.php');
 	//Datos del form
 	$usuario = 	$_SESSION['XID'];
 	$portfolio = $_SESSION['XPORTFOLIO'];
@@ -14,10 +12,11 @@
 		inner join cliente as C on C.id = P.clienteID
 		inner join planes as PA on PA.id = C.planid
 		where P.id =".$portfolio;
-	$check2 = mysqli_query( $conexion, $precheck2) or die();
+	$check2 = mysqli_query($conexion, $precheck2) or die();
 	$resultado2 = mysqli_fetch_row($check2);
 	
 	// Se chequea que no se haya anotado previamente
+	if($usuario == ""){ $usuario = 0; }
 	$precheck = "select postID from  postulaciones where usuarioID = ".$usuario." and portfolioID = ".$portfolio;
 	$check = mysqli_query( $conexion, $precheck) or die();
 	$resultado = mysqli_fetch_row($check);

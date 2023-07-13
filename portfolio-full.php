@@ -101,8 +101,9 @@ if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
 									<li><span><i class="icon-link"></i>Viaja con:</span> <a href="clientes.php?ID=<?=$data_viaje[12]?>"><?=$data_viaje[2]?></a></li>
 									<?
 										// Se chequea que no se haya anotado previamente
+										if($usuario == ""){ $usuario = 0; }
 										$precheck = "select postID from  postulaciones where usuarioID = ".$usuario." and portfolioID = ".$portfolio;
-										$check = mysqli_query( $conexion, $precheck) or die();
+										$check = mysqli_query($conexion, $precheck) or die();
 										$resultado = mysqli_fetch_row($check);
 									?>
 									<?if($_SESSION['XID']==""){?>
@@ -193,7 +194,6 @@ if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("button").click(function(){
-
 				$.ajax({
 					type: 'POST',
 					url: 'portfolio-alta.php',
