@@ -1,9 +1,10 @@
 <?
-
-use function PHPSTORM_META\map;
-
 include 'data.php';
 $ID = $_GET['ID'];
+if($ID==""){ 
+	header('location: index.php');
+	exit;
+}
 $_SESSION['XPORTFOLIO'] = $_GET['ID'];
 $portfolio = $_SESSION['XPORTFOLIO'];
 $usuario = $_SESSION['XID'];
