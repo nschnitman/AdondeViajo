@@ -32,11 +32,11 @@
 	</div>
 	<div class="portfolio-desc">
 		<h3><a href="portfolio-full.php?ID=<?=$row2[10]?>"><?=$row2[0]?></a></h3>
-		<span><a href="#"><?=$row[3] ?></a>, <a href="#"><?=$row2[8]?></a> <? if ($row2[9] != "") {?>,<a href="#"><?=$row2[9]?></a><?}?></span>
-		<p><?=$row[1] ?></p>
+		<span><a href="#"><?= $row2[3] ?></a> <a href="#"><?=$row2[8]?></a> <? if ($row2[9] != "") {?>,<a href="#"><?=$row2[9]?></a><?}?></span>
+		<p><?=$row2[1] ?></p>
 		<ul class="iconlist">
-			<li><i class="icon-ok"></i> <strong>Salida:</strong> <?=$row2[8]?><? if ($row2[9] != "") {?> <?=$row2[9]?><?}?></li>
-			<li><i class="icon-ok"></i> <strong>Destino:</strong> <?=$row[3] ?></li>
+			<li><i class="icon-ok"></i> <strong>Salida:</strong> <?=$row2[8]?><? if ($row2[9] != "") {?>, <?=$row2[9]?><?}?></li>
+			<li><i class="icon-ok"></i> <strong>Destino:</strong> <?=$row2[3] ?></li>
 			<li><i class="icon-ok"></i> <strong>Requisitos:</strong> <?=$row2[11]?></li>
 		</ul>
 		<a href="portfolio-full.php?ID=<?=$row2[10]?>" class="button button-3d noleftmargin">Anotate</a>
