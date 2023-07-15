@@ -1,12 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-$apiKey = ''; // Your MailChimp API Key
-$listId = ''; // Your MailChimp List ID
-=======
 $apiKey = 'f73eb9e2fb632d0d79c7011f80e47839-us16'; // Your MailChimp API Key
 $listId = 'b7af4fdfaf'; // Your MailChimp List ID
->>>>>>> NS-33-merge-github-viejo-nuevo
 
 if( isset( $_GET['list'] ) AND $_GET['list'] != '' ) {
 	$listId = $_GET['list'];
@@ -59,8 +54,4 @@ if( isset( $email ) AND $email != '' ) {
 
 }
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> NS-33-merge-github-viejo-nuevo
