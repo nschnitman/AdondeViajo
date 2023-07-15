@@ -32,7 +32,7 @@
 	</div>
 	<div class="portfolio-desc">
 		<h3><a href="portfolio-full.php?ID=<?=$row2[10]?>"><?=$row2[0]?></a></h3>
-		<span><a href="#"><?= $row2[3] ?></a> <a href="#"><?=$row2[8]?></a> <? if ($row2[9] != "") {?>,<a href="#"><?=$row2[9]?></a><?}?></span>
+		<span><a href="#"><?= $row2[3] ?></a> - <a href="#"><?=$row2[8]?></a> <? if ($row2[9] != "") {?>,<a href="#"><?=$row2[9]?></a><?}?></span>
 		<p><?=$row2[1] ?></p>
 		<ul class="iconlist">
 			<li><i class="icon-ok"></i> <strong>Salida:</strong> <?=$row2[8]?><? if ($row2[9] != "") {?>, <?=$row2[9]?><?}?></li>
