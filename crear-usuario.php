@@ -24,7 +24,8 @@
 	{
 		// Se establece la conexión
 		// Se inserta el nuevo registro en nuestra base de datos
-		$query = "INSERT INTO usuarios ( usuario, clave, nombre, email,telefono,edad,fnac) values ( '$usuario', ". md5($clave).",  '$nombre','$email','$telefono','$edad','$dob')";
+		$clave = md5($clave);
+		$query = "INSERT INTO usuarios ( usuario, clave, nombre, email,telefono,edad,fnac) values ( '$usuario', '$clave',  '$nombre','$email','$telefono','$edad','$dob')";
 		mysqli_query($conexion, $query) or die();
 		// Se vuelve a la página principal
 		header('location: login.php?status=OK'); 
