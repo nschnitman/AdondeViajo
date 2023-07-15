@@ -3,7 +3,8 @@ require 'data.php';
 $USUARIO=$_POST["login-form-username"];
 $CLAVE=$_POST["login-form-password"];
 $POST =$_POST["login-post"];
-$queUSER = "select * from usuarios where (usuario='$USUARIO' and clave=".MD5($CLAVE).")";
+$CLAVE = md5($CLAVE);
+$queUSER = "select * from usuarios where (usuario='$USUARIO' and clave='$CLAVE')";
 $resUSER = mysqli_query($conexion, $queUSER) or die();
 $totUSER = mysqli_num_rows($resUSER);
 ?>
