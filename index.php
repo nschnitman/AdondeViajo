@@ -130,7 +130,11 @@
 										inner join destino as D on D.id = P.destinoID
 										order by RAND()
 										limit 8";
+<<<<<<< HEAD
 							$re2 = mysql_query($sq12,$conexion); 
+=======
+							$re2 = mysqli_query($conexion, $sq12) or die();
+>>>>>>> NS-33-merge-github-viejo-nuevo
 						?>					
 							
 							<?include 'article.php' ?>
@@ -147,9 +151,15 @@
 					$sql3  = "select C.id, C.nombre, C.logo 
 					from cliente as C 
 					where C.activo=1";
+<<<<<<< HEAD
 					$re3 = mysql_query($sql3,$conexion); 
 					?>	
 					<? while($row = mysql_fetch_row($re3)){ ?>   
+=======
+					$re3 = mysqli_query($conexion, $sql3) or die(); 
+					?>	
+					<? while($row = mysqli_fetch_row($re3)){ ?>   
+>>>>>>> NS-33-merge-github-viejo-nuevo
 					<div class="oc-item"><a href="clientes.php?ID=<?=$row[0]?>"><img src="../<?=$row[2]?>" alt="<?=$row[1]?>"></a></div>
 					<?}?>
 

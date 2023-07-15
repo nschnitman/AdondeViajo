@@ -4,7 +4,11 @@
 $sql3  = "select C.id, C.nombre, C.logo 
 from cliente as C 
 where C.activo=1";
+<<<<<<< HEAD
 $re3 = mysql_query($sql3,$conexion); 
+=======
+$re3 = mysqli_query($conexion, $sql3) or die();
+>>>>>>> NS-33-merge-github-viejo-nuevo
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -60,8 +64,13 @@ $re3 = mysql_query($sql3,$conexion);
 					<h4>Estas son las Instituciones / Templos con los cuales podrias viajar!</h4>
 
 					<ul class="clients-grid nobottommargin clearfix">
+<<<<<<< HEAD
 					<? while($row = mysql_fetch_row($re3)){ ?>   
 						<li><a href="clientes.php?ID=<?=$row[0]?>"><img src="<?=$row[2]?>" alt="<?=str_replace("ñ", "&ntilde;", $row[1]) ?>"></a></li>
+=======
+					<? while($row = mysqli_fetch_row($re3)){ ?>   
+						<li><a href="clientes.php?ID=<?=$row[0]?>"><img src="<?=$row[2]?>" alt="<?=$row[1] ?>"></a></li>
+>>>>>>> NS-33-merge-github-viejo-nuevo
 					<?}?>
 					</ul>
 

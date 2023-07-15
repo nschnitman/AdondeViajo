@@ -13,7 +13,11 @@
 11)P.requisitos -->
 
 
+<<<<<<< HEAD
 <? while($row2 = mysql_fetch_row($re5)){ ?>  
+=======
+<? while($row2 = mysqli_fetch_row($re5)){ ?>  
+>>>>>>> NS-33-merge-github-viejo-nuevo
 <article class="portfolio-item  <?=$row2[7]?> pf-<?=$row2[3]?> clearfix">
 	<div class="portfolio-image">
 		<div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
@@ -32,11 +36,19 @@
 	</div>
 	<div class="portfolio-desc">
 		<h3><a href="portfolio-full.php?ID=<?=$row2[10]?>"><?=$row2[0]?></a></h3>
+<<<<<<< HEAD
 		<span><a href="#"><?=str_replace("ñ", "&ntilde;", $row[3]) ?></a>, <a href="#"><?=$row2[8]?></a> <? if ($row2[9] != "") {?>,<a href="#"><?=$row2[9]?></a><?}?></span>
 		<p><?=str_replace("ñ", "&ntilde;", $row[1]) ?></p>
 		<ul class="iconlist">
 			<li><i class="icon-ok"></i> <strong>Salida:</strong> <?=$row2[8]?><? if ($row2[9] != "") {?>, <?=$row2[9]?><?}?></li>
 			<li><i class="icon-ok"></i> <strong>Destino:</strong> <?=str_replace("ñ", "&ntilde;", $row[3]) ?></li>
+=======
+		<span><a href="#"><?= $row2[3] ?></a> - <a href="#"><?=$row2[8]?></a> <? if ($row2[9] != "") {?>,<a href="#"><?=$row2[9]?></a><?}?></span>
+		<p><?=$row2[1] ?></p>
+		<ul class="iconlist">
+			<li><i class="icon-ok"></i> <strong>Salida:</strong> <?=$row2[8]?><? if ($row2[9] != "") {?>, <?=$row2[9]?><?}?></li>
+			<li><i class="icon-ok"></i> <strong>Destino:</strong> <?=$row2[3] ?></li>
+>>>>>>> NS-33-merge-github-viejo-nuevo
 			<li><i class="icon-ok"></i> <strong>Requisitos:</strong> <?=$row2[11]?></li>
 		</ul>
 		<a href="portfolio-full.php?ID=<?=$row2[10]?>" class="button button-3d noleftmargin">Anotate</a>

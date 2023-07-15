@@ -196,7 +196,11 @@
 										inner join destino as D on D.id = P.destinoID
 										order by RAND()
 										limit 4";
+<<<<<<< HEAD
 							$re2 = mysql_query($sq12,$conexion); 
+=======
+							$re2 = mysqli_query($conexion, $sq12) or die();
+>>>>>>> NS-33-merge-github-viejo-nuevo
 							?>					
 							
 							<?include 'article.php' ?>

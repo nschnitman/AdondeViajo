@@ -90,9 +90,15 @@ if ($_SESSION['XUSUARIO'] == ""){
 																	inner join destino d on d.id = p.destinoid
 																	inner join cliente c on c.id = p.clienteid
 																	where pos.usuarioid =".$_SESSION['XID'];
+<<<<<<< HEAD
 															$r9 = mysql_query($sql7,$conexion); 
 														?>
 														<? while($row = mysql_fetch_row($r9)){ ?>   
+=======
+															$r9 = mysqli_query($conexion, $sql7) or die();
+														?>
+														<? while($row = mysqli_fetch_row($r9)){ ?>   
+>>>>>>> NS-33-merge-github-viejo-nuevo
 														<tr>
 														  <td>
 															<code><?=$row[0]?></code>

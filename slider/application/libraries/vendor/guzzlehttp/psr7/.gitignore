@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 phpunit.xml
 composer.phar
 composer.lock
@@ -9,3 +10,16 @@ docs/_build
 docs/*.pyc
 .idea
 .DS_STORE
+=======
+phpunit.xml
+composer.phar
+composer.lock
+composer-test.lock
+vendor/
+build/artifacts/
+artifacts/
+docs/_build
+docs/*.pyc
+.idea
+.DS_STORE
+>>>>>>> NS-33-merge-github-viejo-nuevo

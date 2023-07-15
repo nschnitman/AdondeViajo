@@ -13,7 +13,11 @@
 11)D.pf -->
 
 
+<<<<<<< HEAD
 <? while($row = mysql_fetch_row($re2)){ ?>  
+=======
+<? while($row = mysqli_fetch_row($re2)){ ?>  
+>>>>>>> NS-33-merge-github-viejo-nuevo
 <article class="portfolio-item <?=$row[7]?> pf-<?=$row[11]?>">
 <div class="portfolio-image">
 	<div class="fslider" data-arrows="false" data-speed="700" data-pause="7000">
@@ -32,7 +36,11 @@
 </div>
 <div class="portfolio-desc">
 	<h3><a href="<?=$row[5]?>"><?=$row[0]?></a></h3>
+<<<<<<< HEAD
 	<span><a href="#"><?=str_replace("ñ", "&ntilde;", $row[3]) ?></a>, <a href="#"><?=$row[8]?></a> <? if ($row[9] != "") {?>,<a href="#"><?=$row[9]?></a><?}?></span>
+=======
+	<span><a href="#"><?=$row[3] ?></a>, <a href="#"><?=$row[8]?></a> <? if ($row[9] != "") {?>,<a href="#"><?=$row[9]?></a><?}?></span>
+>>>>>>> NS-33-merge-github-viejo-nuevo
 </div>
 </article>
 <?}?>

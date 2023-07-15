@@ -10,12 +10,20 @@
 8)P.salida1
 9)P.salida2
 10)P.ID -->
+<<<<<<< HEAD
 <? while($row = mysql_fetch_row($re3)){ ?>  
+=======
+<? while($row = mysqli_fetch_row($re3)){ ?>  
+>>>>>>> NS-33-merge-github-viejo-nuevo
 <div class="oc-item">
 	<div class="iportfolio">
 		<div class="portfolio-image">
 			<a href="<?=$portfull?><?=$row[10]?>">
+<<<<<<< HEAD
 				<img src="<?=$row[4]?>" alt="<?=str_replace("ñ", "&ntilde;", $row[0]) ?>">
+=======
+				<img src="<?=$row[4]?>" alt="<?= $row[0] ?>">
+>>>>>>> NS-33-merge-github-viejo-nuevo
 			</a>
 			<div class="portfolio-overlay" data-lightbox="gallery">
 				<a href="<?=$row[4]?>" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
@@ -24,7 +32,11 @@
 			</div>
 		</div>
 		<div class="portfolio-desc">
+<<<<<<< HEAD
 			<h3><a href="<?=$portfull?><?=$row[10]?>"><?=str_replace("ñ", "&ntilde;", $row[0]) ?></a></h3>
+=======
+			<h3><a href="<?=$portfull?><?=$row[10]?>"><?=$row[0] ?></a></h3>
+>>>>>>> NS-33-merge-github-viejo-nuevo
 			<span><a href="#"><a href="#"><?=$row[8]?></a><?if($row[9]!=""){?>, <a href="#"><?=$row[9]?></a><?}?></span>
 		</div>
 	</div>

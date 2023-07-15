@@ -77,7 +77,11 @@
 					$sq12  = "select P.titulo, P.descripcion, C.nombre, D.pais, P.imagen, P.link, P.imagen2, P.filtro, P.salida1, P.salida2, P.ID, D.pf from portfolio as P 
 								inner join cliente as C on C.id = P.clienteID
 								inner join destino as D on D.id = P.destinoID";
+<<<<<<< HEAD
 					$re2 = mysql_query($sq12,$conexion); 
+=======
+					$re2 = mysqli_query($conexion, $sq12) or die();
+>>>>>>> NS-33-merge-github-viejo-nuevo
 				?>					
 					
 					<?include 'article.php' ?>

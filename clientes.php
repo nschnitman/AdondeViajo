@@ -5,8 +5,13 @@ $sql  = "select P.titulo, P.descripcion, C.nombre, D.pais, P.imagen, P.link, P.i
 		inner join cliente as C on C.id = P.clienteID
 		inner join destino as D on D.id = P.destinoID 
 		where C.ID ='".$ID."'";
+<<<<<<< HEAD
 $re2 = mysql_query($sql,$conexion); 
 $data_viaje = mysql_fetch_row($re2);
+=======
+$re2 = mysqli_query($conexion, $sql) or die();
+$data_viaje = mysqli_fetch_row($re2);
+>>>>>>> NS-33-merge-github-viejo-nuevo
 $cliente = $data_viaje[2];
 ?>
 <!DOCTYPE html>
@@ -88,7 +93,11 @@ $cliente = $data_viaje[2];
 									  inner join cliente as C on C.id = P.clienteID
 									  inner join destino as D on D.id = P.destinoID 
 									  where C.ID ='".$ID."'";
+<<<<<<< HEAD
 							$re5 = mysql_query($sql4,$conexion); ?>
+=======
+							$re5 = mysqli_query($conexion, $sql4) or die(); ?>
+>>>>>>> NS-33-merge-github-viejo-nuevo
 
 							<?include 'cliente-individual.php';?>
 							

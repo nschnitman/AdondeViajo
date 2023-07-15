@@ -1,4 +1,10 @@
 <?
+<<<<<<< HEAD
+=======
+
+use function PHPSTORM_META\map;
+
+>>>>>>> NS-33-merge-github-viejo-nuevo
 include 'data.php';
 $ID = $_GET['ID'];
 $_SESSION['XPORTFOLIO'] = $_GET['ID'];
@@ -10,11 +16,19 @@ $sql  = "select P.titulo, P.descripcion, C.nombre, D.pais, P.imagen, P.link, P.i
 		inner join destino as D on D.id = P.destinoID 
 		inner join planes as PA on PA.id = C.planid
 		where P.ID ='".$ID."'";
+<<<<<<< HEAD
 $re2 = mysql_query($sql,$conexion); 
 $data_viaje = mysql_fetch_row($re2);
 $sql2  = "select max(ID) from portfolio";
 $re4 = mysql_query($sql2,$conexion); 
 $data_port = mysql_fetch_row($re4);
+=======
+$re2 = mysqli_query($conexion, $sql) or die();
+$data_viaje = mysqli_fetch_row($re2);
+$sql2  = "select max(ID) from portfolio";
+$re4 = mysqli_query($conexion, $sql2) or die();
+$data_port = mysqli_fetch_row($re4);
+>>>>>>> NS-33-merge-github-viejo-nuevo
 $ultima = $data_port[0];
 if($ID >= $ultima){ $pagnext = 1; }else{ $pagnext = $ID+1; }
 if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
@@ -98,9 +112,16 @@ if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
 									<li><span><i class="icon-link"></i>Viaja con:</span> <a href="clientes.php?ID=<?=$data_viaje[12]?>"><?=$data_viaje[2]?></a></li>
 									<?
 										// Se chequea que no se haya anotado previamente
+<<<<<<< HEAD
 										$precheck = "select postID from  postulaciones where usuarioID = ".$usuario." and portfolioID = ".$portfolio;
 										$check = mysql_query($precheck, $conexion);
 										$resultado = mysql_fetch_row($check);
+=======
+										if($usuario == ""){ $usuario = 0; }
+										$precheck = "select postID from  postulaciones where usuarioID = ".$usuario." and portfolioID = ".$portfolio;
+										$check = mysqli_query($conexion, $precheck) or die();
+										$resultado = mysqli_fetch_row($check);
+>>>>>>> NS-33-merge-github-viejo-nuevo
 									?>
 									<?if($_SESSION['XID']==""){?>
 										<li><a href="login.php?post=<?=$portfolio?>"> <button type="button" class="btn btn-warning">Logueate para anotarte</button></a></li>
@@ -152,7 +173,11 @@ if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
 										inner join cliente as C on C.id = P.clienteID
 										inner join destino as D on D.id = P.destinoID
 										where P.id <>'".$ID."'";
+<<<<<<< HEAD
 							$re3 = mysql_query($sq12,$conexion); 
+=======
+							$re3 = mysqli_query($conexion, $sq12) or die();
+>>>>>>> NS-33-merge-github-viejo-nuevo
 						?>	
 						<?include'related.php'?>
 
@@ -190,7 +215,10 @@ if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("button").click(function(){
+<<<<<<< HEAD
 
+=======
+>>>>>>> NS-33-merge-github-viejo-nuevo
 				$.ajax({
 					type: 'POST',
 					url: 'portfolio-alta.php',

@@ -1,10 +1,19 @@
+<<<<<<< HEAD
 <?include '../web/data.php'?>
+=======
+<?include '../data.php'?>
+>>>>>>> NS-33-merge-github-viejo-nuevo
 <?
 	$clienteID = 13;
 	$sq28  = "select nombre, logo, telefono, email from cliente
 				where cliente.id=".$clienteID;
+<<<<<<< HEAD
 	$re28 = mysql_query($sq28,$conexion); 
 	$info =	mysql_fetch_row($re28);
+=======
+	$re28 = mysqli_query($conexion, $sq28); 
+	$info =	mysqli_fetch_row($re28);
+>>>>>>> NS-33-merge-github-viejo-nuevo
 	$clientenombre = $info[0];
 ?>						
 
@@ -133,7 +142,11 @@
 										inner join destino as D on D.id = P.destinoID
 										where C.id=".$clienteID."
 										order by RAND()";
+<<<<<<< HEAD
 							$re2 = mysql_query($sq12,$conexion); 
+=======
+							$re2 = mysqli_query($conexion, $sq12); 
+>>>>>>> NS-33-merge-github-viejo-nuevo
 						?>					
 							
 							<?include '../web/article.php' ?>
