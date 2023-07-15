@@ -32,7 +32,7 @@
 </div>
 <div class="portfolio-desc">
 	<h3><a href="../<?=$row[5]?>"><?=$row[0]?></a></h3>
-	<span><a href="#"><?=str_replace("ñ", "&ntilde;", $row[3]) ?></a>, <a href="#"><?=$row[8]?></a> <? if ($row[9] != "") {?>,<a href="#"><?=$row[9]?></a><?}?></span>
+	<span><a href="#"><?=$row[3] ?></a>, <a href="#"><?=$row[8]?></a> <? if ($row[9] != "") {?>,<a href="#"><?=$row[9]?></a><?}?></span>
 </div>
 </article>
 <?}?>

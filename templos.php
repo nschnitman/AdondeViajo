@@ -61,7 +61,7 @@ $re3 = mysqli_query($conexion, $sql3) or die();
 
 					<ul class="clients-grid nobottommargin clearfix">
 					<? while($row = mysqli_fetch_row($re3)){ ?>   
-						<li><a href="clientes.php?ID=<?=$row[0]?>"><img src="<?=$row[2]?>" alt="<?=str_replace("ñ", "&ntilde;", $row[1]) ?>"></a></li>
+						<li><a href="clientes.php?ID=<?=$row[0]?>"><img src="<?=$row[2]?>" alt="<?=$row[1] ?>"></a></li>
 					<?}?>
 					</ul>
 
