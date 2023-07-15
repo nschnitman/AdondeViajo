@@ -14,7 +14,23 @@
 	$birthDate = explode("/", $dob2);
 	$dob = 	$birthDate[2]."-".$birthDate[0]."-".$birthDate[1];
 
-
+	function redirect($url)
+	{
+		if (!headers_sent())
+		{    
+			header('Location: '.$url);
+			exit;
+			}
+		else
+			{  
+			echo '<script type="text/javascript">';
+			echo 'window.location.href="'.$url.'";';
+			echo '</script>';
+			echo '<noscript>';
+			echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+			echo '</noscript>'; exit;
+		}
+	}
 	
 	// Sólo se requieren para los campos obligatorios del registro que no estén vacío
 	if( isset($nombre) && !empty($nombre) &&
@@ -28,7 +44,7 @@
 		$query = "INSERT INTO usuarios ( usuario, clave, nombre, email,telefono,edad,fnac) values ( '$usuario', '$clave',  '$nombre','$email','$telefono','$edad','$dob')";
 		mysqli_query($conexion, $query) or die();
 		// Se vuelve a la página principal
-		header('location: login.php?status=OK'); 
+		redirect('login.php?status=OK'); 
 		exit;
 		//echo '{ "alert": "success", "message": "Tu usuario ha sido creado correctamente." }';
 		//echo "usuario creado correctamente.";
@@ -38,7 +54,7 @@
 		// En caso de no conectarse, se reiniciará la misma página con un error
 		//echo '{ "alert": "error", "message": "Problemas al insertar datos. Por favor contacte al administrador." }';
 		//echo "problemas al insertar datos.";
-		header('location: login.php?status=DIE'); 
+		redirect('login.php?status=DIE'); 
 		exit;
 	}
 	
