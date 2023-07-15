@@ -29,6 +29,7 @@
 		mysqli_query($conexion, $query) or die();
 		// Se vuelve a la página principal
 		header('location: login.php?status=OK'); 
+		exit;
 		//echo '{ "alert": "success", "message": "Tu usuario ha sido creado correctamente." }';
 		//echo "usuario creado correctamente.";
 		mysqli_close($conexion);
