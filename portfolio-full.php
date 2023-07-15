@@ -2,8 +2,7 @@
 include 'data.php';
 $ID = $_GET['ID'];
 if($ID==""){ 
-	header('location: index.php');
-	exit;
+	$ID = 0;
 }
 $_SESSION['XPORTFOLIO'] = $_GET['ID'];
 $portfolio = $_SESSION['XPORTFOLIO'];
@@ -36,7 +35,7 @@ if($ID == 1 ){ $pagant = $ultima; }else{ $pagant = $ID-1; }
 	<!-- Document Title
 	============================================= -->
 	<title>Viaje a  <?=$data_viaje[3]?> | <?=$longnombre;?></title>
-<?if ($ID="") { ?>
+<?if ($ID == "" || $ID == 0) { ?>
 	<SCRIPT type="text/javascript">
 		top.location.href = 'index.php'; 
     </script> 
