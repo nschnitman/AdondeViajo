@@ -73,13 +73,8 @@ if ($_SESSION['XUSUARIO'] == ""){
 				<div class="container clearfix">
 <?
 $queryuser = "select id,usuario,clave,nombre,email,telefono,edad from usuarios where id = ".$UserID;
-<<<<<<< HEAD
-$conuser = mysql_query($queryuser, $conexion) or die(mysql_error());
-$resUSER = mysql_fetch_row($conuser);
-=======
 $conuser = mysqli_query($conexion, $queryuser) or die();
 $resUSER = mysqli_fetch_row($conuser);
->>>>>>> NS-33-merge-github-viejo-nuevo
 ?>
 					<table class="table table-bordered table-striped" style="clear: both">
 						<tbody>
