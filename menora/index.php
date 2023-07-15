@@ -1,10 +1,10 @@
-<?include '../web/data.php'?>
+<?include '../data.php'?>
 <?
 	$clienteID = 13;
 	$sq28  = "select nombre, logo, telefono, email from cliente
 				where cliente.id=".$clienteID;
-	$re28 = mysql_query($sq28,$conexion); 
-	$info =	mysql_fetch_row($re28);
+	$re28 = mysqli_query($conexion, $sq28); 
+	$info =	mysqli_fetch_row($re28);
 	$clientenombre = $info[0];
 ?>						
 
@@ -133,7 +133,7 @@
 										inner join destino as D on D.id = P.destinoID
 										where C.id=".$clienteID."
 										order by RAND()";
-							$re2 = mysql_query($sq12,$conexion); 
+							$re2 = mysqli_query($conexion, $sq12); 
 						?>					
 							
 							<?include '../web/article.php' ?>
