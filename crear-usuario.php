@@ -24,18 +24,18 @@
 	{
 		// Se establece la conexión
 		// Se inserta el nuevo registro en nuestra base de datos
-		$query = "INSERT INTO usuarios ( usuario, clave, nombre, email,telefono,edad,fnac) values ( '$usuario', '$clave',  '$nombre','$email','$telefono','$edad','$dob')";
+		$query = "INSERT INTO usuarios ( usuario, clave, nombre, email,telefono,edad,fnac) values ( '$usuario', ".MD5($clave).",  '$nombre','$email','$telefono','$edad','$dob')";
 		mysqli_query($conexion, $query) or die();
 		// Se vuelve a la página principal
 		header('location: login.php?status=OK'); 
 		//echo '{ "alert": "success", "message": "Tu usuario ha sido creado correctamente." }';
-		echo "usuario creado correctamente.";
+		//echo "usuario creado correctamente.";
 		mysqli_close($conexion);
 	} else
 	{
 		// En caso de no conectarse, se reiniciará la misma página con un error
 		//echo '{ "alert": "error", "message": "Problemas al insertar datos. Por favor contacte al administrador." }';
-		echo "problemas al insertar datos.";
+		//echo "problemas al insertar datos.";
 		header('location: login.php?status=DIE'); 
 		exit;
 	}
