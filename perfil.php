@@ -1,6 +1,7 @@
-<?include'data.php'?>
+<? include 'data.php' ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
+
 <head>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -8,19 +9,18 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	<?include'css.php'?>
+	<? include 'css.php' ?>
 	<!-- Document Title
 	============================================= -->
 	<title>Mi Perfil | Adonde Viajo</title>
 
 
-<script language="JavaScript" type = "text/javascript">
-
-<?
-if ($_SESSION['XUSUARIO'] == ""){
-    echo " top.location.href = 'login.php';\n";
-} ?>
-</script>
+	<script language="JavaScript" type="text/javascript">
+		<?
+		if ($_SESSION['XUSUARIO'] == "") {
+			echo " top.location.href = 'login.php';\n";
+		} ?>
+	</script>
 
 
 </head>
@@ -33,7 +33,7 @@ if ($_SESSION['XUSUARIO'] == ""){
 
 		<!-- Header
 		============================================= -->
-		<?include'menu.php'?>
+		<? include 'menu.php' ?>
 		<!-- #header end -->
 
 		<!-- Content
@@ -51,7 +51,7 @@ if ($_SESSION['XUSUARIO'] == ""){
 							<img src="images/icons/avatar.jpg" class="alignleft img-circle img-thumbnail notopmargin nobottommargin" alt="Avatar" style="max-width: 84px;">
 
 							<div class="heading-block noborder">
-								<h3><?=	$_SESSION['XUSUARIO']?></h3>
+								<h3><?= $_SESSION['XUSUARIO'] ?></h3>
 								<span>Tu Perfil</span>
 							</div>
 
@@ -71,37 +71,37 @@ if ($_SESSION['XUSUARIO'] == ""){
 
 												<div class="table-responsive">
 													<table class="table table-bordered table-striped">
-													  <colgroup>
-														<col class="col-xs-3">
-														<col class="col-xs-5">
-													  </colgroup>
-													  <thead>
-														<tr>
-														  <th>Fecha</th>
-														  <th>Destino</th>
-														  <th>Institucion</th>
-														</tr>
-													  </thead>
-													  <tbody>
-														<?
-															$sql7="select pos.fecha, d.pais, d.ciudad, c.nombre
+														<colgroup>
+															<col class="col-xs-3">
+															<col class="col-xs-5">
+														</colgroup>
+														<thead>
+															<tr>
+																<th>Fecha</th>
+																<th>Destino</th>
+																<th>Institucion</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?
+															$sql7 = "select pos.fecha, d.pais, d.ciudad, c.nombre
 																	from postulaciones pos 
 																	inner join portfolio p on p.id = pos.portfolioid
 																	inner join destino d on d.id = p.destinoid
 																	inner join cliente c on c.id = p.clienteid
-																	where pos.usuarioid =".$_SESSION['XID'];
+																	where pos.usuarioid =" . $_SESSION['XID'];
 															$r9 = mysqli_query($conexion, $sql7) or die();
-														?>
-														<? while($row = mysqli_fetch_row($r9)){ ?>   
-														<tr>
-														  <td>
-															<code><?=$row[0]?></code>
-														  </td>
-														  <td><?=$row[1]?> - <?=$row[2]?></td>  
-														  <td><?=$row[3]?></td>
-														</tr>
-														<?}?>
-													  </tbody>
+															?>
+															<? while ($row = mysqli_fetch_row($r9)) { ?>
+																<tr>
+																	<td>
+																		<code><?= $row[0] ?></code>
+																	</td>
+																	<td><?= $row[1] ?> - <?= $row[2] ?></td>
+																	<td><?= $row[3] ?></td>
+																</tr>
+															<? } ?>
+														</tbody>
 													</table>
 												</div>
 
@@ -131,7 +131,7 @@ if ($_SESSION['XUSUARIO'] == ""){
 
 		<!-- Footer
 		============================================= -->
-		<?include'footer.php'?>
+		<? include 'footer.php' ?>
 		<!-- #footer end -->
 
 	</div><!-- #wrapper end -->
@@ -150,10 +150,18 @@ if ($_SESSION['XUSUARIO'] == ""){
 	<script type="text/javascript" src="js/functions.js"></script>
 
 	<script>
-		jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
-			jQuery( '.flexslider .slide' ).resize();
+		jQuery("#tabs-profile").on("tabsactivate", function(event, ui) {
+			jQuery('.flexslider .slide').resize();
 		});
 	</script>
+	<?
+	if ($_GET['status'] == "OK") {
+		echo "alert('Tu perfil ha sido actualizado correctamente.');\n";
+	} else if ($_GET['status'] == "ERROR") {
+		echo "alert('Hubo un error al actualizar tu perfil.');\n";
+	}
+	?>
 
 </body>
+
 </html>
