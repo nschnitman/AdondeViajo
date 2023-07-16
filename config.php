@@ -81,33 +81,43 @@
 							<tr>
 								<td width="40%">Nombre</td>
 								<td width="60%">
-									<a href="#" class="bt-editable" data-type="text" data-placement="right" data-pk="1" data-title="Ingrese su nombre"><?= $resUSER[2]; ?></a>
+									<a href="#" class="bt-editable"  name="nombre" data-type="text" data-placement="right" data-pk="1" data-title="Ingrese su nombre"><?= $resUSER[2]; ?></a>
 								</td>
 							</tr>
 							<tr>
 								<td>Email</td>
 								<td>
-									<a href="#" class="bt-editable" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu email"><?= $resUSER[3]; ?></a>
+									<a href="#" class="bt-editable" name="email" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu email"><?= $resUSER[3]; ?></a>
 								</td>
 							</tr>
 							<tr>
 								<td>Telefono</td>
 								<td>
-									<a href="#" class="bt-editable" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu telefono"><?= $resUSER[4]; ?></a>
+									<a href="#" class="bt-editable" name="telefono" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu telefono"><?= $resUSER[4]; ?></a>
 								</td>
 							</tr>
 							<tr>
 								<td>Edad</td>
 								<td>
-									<a href="#" class="bt-editable" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu edad"><?= $resUSER[5]; ?></a>
+									<a href="#" class="bt-editable" name="edad" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu edad"><?= $resUSER[5]; ?></a>
 								</td>
 							</tr>
 							<tr>
 								<td>Nueva Clave</td>
 								<td>
-									<a href="#" class="bt-editable" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu nueva clave"></a>
+									<a href="#" class="bt-editable" name="clave" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Ingresa tu nueva clave"></a>
 								</td>
 							</tr>
+							<?
+							if (isset($clave) && !empty($clave)) {
+							?>
+							<tr>
+								<td>Repetir Clave</td>
+								<td>
+									<a href="#" class="bt-editable" name="clave2" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Repite tu nueva clave"></a>
+								</td>
+							</tr>
+							<? } ?>
 						</tbody>
 					</table>
 					<button type="button" class="btn btn-success" id="bt-save">Actualizar</button>
@@ -171,7 +181,7 @@
 				$('.bt-editable').editable('submit', {
 					url: 'update-config.php',
 					params: {
-						action: 'save'
+						action: 'post'
 					}
 				});
 			});
