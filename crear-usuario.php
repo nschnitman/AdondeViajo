@@ -14,7 +14,7 @@
 	$birthDate = explode("/", $dob2);
 	$dob = 	$birthDate[2]."-".$birthDate[0]."-".$birthDate[1];
 
-	function redirect($url)
+	function redirecting($url)
 	{
 		if (!headers_sent())
 		{    
@@ -44,7 +44,7 @@
 		$query = "INSERT INTO usuarios ( usuario, clave, nombre, email,telefono,edad,fnac) values ( '$usuario', '$clave',  '$nombre','$email','$telefono','$edad','$dob')";
 		mysqli_query($conexion, $query) or die();
 		// Se vuelve a la página principal
-		redirect('login.php?status=OK'); 
+		redirecting('login.php?status=OK'); 
 		exit;
 		//echo '{ "alert": "success", "message": "Tu usuario ha sido creado correctamente." }';
 		//echo "usuario creado correctamente.";
@@ -54,7 +54,7 @@
 		// En caso de no conectarse, se reiniciará la misma página con un error
 		//echo '{ "alert": "error", "message": "Problemas al insertar datos. Por favor contacte al administrador." }';
 		//echo "problemas al insertar datos.";
-		redirect('login.php?status=DIE'); 
+		redirecting('login.php?status=DIE'); 
 		exit;
 	}
 	
