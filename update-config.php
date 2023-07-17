@@ -9,8 +9,7 @@ $edad = $_POST['edad'];
 $clave = $_POST['clave'];
 $clave2 = $_POST['clave2'];
 
-function redirecting($url)
-{
+function redirecting($url){
     if (!headers_sent())
     {    
         header('Location: '.$url);
