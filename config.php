@@ -182,12 +182,12 @@
 					url: 'update-config.php',
 					type: 'POST',
 					data: {
-						'nombre': $('[name="nombre"]').editable('getValue').nombre,
-						'email': $('[name="email"]').editable('getValue').email,
-						'telefono': $('[name="telefono"]').editable('getValue').telefono,
-						'edad': $('[name="edad"]').editable('getValue').edad,
-						'clave': $('[name="clave"]').editable('getValue').clave,
-						'clave2': $('[name="clave2"]').editable('getValue').clave2
+						'nombre': $('[name="nombre"]').val(),
+						'email': $('[name="email"]').val(),
+						'telefono': $('[name="telefono"]').val(),
+						'edad': $('[name="edad"]').val(),
+						'clave': $('[name="clave"]').val(),
+						'clave2': $('[name="clave2"]').val()
 					},
 					success: function(data) {
 						console.log(data);
