@@ -9,6 +9,25 @@ $edad = $_POST['edad'];
 $clave = $_POST['clave'];
 $clave2 = $_POST['clave2'];
 
+function redirecting($url)
+{
+    if (!headers_sent())
+    {    
+        header('Location: '.$url);
+        exit;
+        }
+    else
+        {  
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$url.'";';
+        echo '</script>';
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+        echo '</noscript>'; exit;
+    }
+}
+
+
 //check if the data is not empty
 if (
     isset($nombre) && !empty($nombre) &&
@@ -28,22 +47,22 @@ if (
             $query = "UPDATE usuarios SET nombre = '$nombre', email = '$email', telefono = '$telefono', edad = '$edad', clave = '$clave' WHERE id = '$UserID'";
             mysqli_query($conexion, $query) or die();
             //redirect to the profile page
-            redirect('perfil.php?status=OK');
+            redirecting('perfil.php?status=OK');
             exit;
         } else {
             //redirect to the profile page
-            redirect('perfil.php?status=ERROR');
+            redirecting('perfil.php?status=ERROR');
             exit;
         }
     } else {
         $query = "UPDATE usuarios SET nombre = '$nombre', email = '$email', telefono = '$telefono', edad = '$edad' WHERE id = '$UserID'";
         mysqli_query($conexion, $query) or die();
         //redirect to the profile page
-        redirect('perfil.php?status=OK');
+        redirecting('perfil.php?status=OK');
         exit;
     }
 } else {
     //redirect to the profile page
-    redirect('perfil.php?status=ERROR');
+    redirecting('perfil.php?status=ERROR');
     exit;
 }
