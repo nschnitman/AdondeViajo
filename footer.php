@@ -199,3 +199,4 @@
 			</div><!-- #copyrights end -->
 
 		</footer><!-- #footer end -->
+		<? include_once 'include/analyticstracking.php';?>
