@@ -1,5 +1,4 @@
 <? session_start();
-include_once 'include/analyticstracking.php';
 
 //Descripcion
 $tinynombre = "Short Name";
