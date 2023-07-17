@@ -178,10 +178,25 @@
 
 			//save data via php function
 			$('#bt-save').click(function() {
-				$('.bt-editable').editable('submit', {
+				$.ajax({
 					url: 'update-config.php',
-					params: {
-						action: 'post'
+					type: 'POST',
+					data: {
+						'nombre': $('[name="nombre"]').editable('getValue').nombre,
+						'email': $('[name="email"]').editable('getValue').email,
+						'telefono': $('[name="telefono"]').editable('getValue').telefono,
+						'edad': $('[name="edad"]').editable('getValue').edad,
+						'clave': $('[name="clave"]').editable('getValue').clave,
+						'clave2': $('[name="clave2"]').editable('getValue').clave2
+					},
+					success: function(data) {
+						//alert(data);
+						if (data == "OK") {
+							alert("Datos actualizados correctamente");
+							location.reload();
+						} else {
+							alert("Error al actualizar los datos");
+						}
 					}
 				});
 			});
