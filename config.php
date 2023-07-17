@@ -177,20 +177,24 @@
 			});
 
 			//save data via php function
+			window.onload( 
+				sleep(2000),
+				alert($('[name="nombre"]').val())
+			)
 			$('#bt-save').click(function() {
 				$.ajax({
 					url: 'update-config.php',
 					type: 'POST',
 					data: {
-						'nombre': $('[name="nombre"]').editable('getValue').nombre,
-						'email': $('[name="email"]').editable('getValue').email,
-						'telefono': $('[name="telefono"]').editable('getValue').telefono,
-						'edad': $('[name="edad"]').editable('getValue').edad,
-						'clave': $('[name="clave"]').editable('getValue').clave,
-						'clave2': $('[name="clave2"]').editable('getValue').clave2
+						'nombre': $('[name="nombre"]').val(),
+						'email': $('[name="email"]').val(),
+						'telefono': $('[name="telefono"]').val(),
+						'edad': $('[name="edad"]').val(),
+						'clave': $('[name="clave"]').val(),
+						'clave2': $('[name="clave2"]').val()
 					},
 					success: function(data) {
-						console.log(data);
+						console.log($('[name="nombre"]').val());
 						alert(data);
 						if (data == "OK") {
 							alert("Datos actualizados correctamente");
