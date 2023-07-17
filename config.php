@@ -177,6 +177,10 @@
 			});
 
 			//save data via php function
+			window.onload( 
+				sleep(2000),
+				alert($('[name="nombre"]').val())
+			)
 			$('#bt-save').click(function() {
 				$.ajax({
 					url: 'update-config.php',
@@ -190,7 +194,7 @@
 						'clave2': $('[name="clave2"]').val()
 					},
 					success: function(data) {
-						console.log(data);
+						console.log($('[name="nombre"]').val());
 						alert(data);
 						if (data == "OK") {
 							alert("Datos actualizados correctamente");
