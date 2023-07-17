@@ -190,7 +190,7 @@
 						'clave2': $('[name="clave2"]').editable('getValue').clave2
 					},
 					success: function(data) {
-						//alert(data);
+						alert(data);
 						if (data == "OK") {
 							alert("Datos actualizados correctamente");
 							location.reload();
